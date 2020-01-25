@@ -14,7 +14,8 @@ description: A base theme built on Bourbon and Neat
 baseurl: ""
 # the base hostname & protocol for your site
 url: "https://www.artwash.co.uk"
-logo: "/siteicon.png"
+logo: "/assets/images/artwash_logo.gif"
+show_logo: true
 email: a.ward@eyedivision.com
 
 # Build settings
@@ -47,7 +48,7 @@ defaults:
 
 
 # Google analytics
-# ga_tracking_id: "UA-XXXX-1"
+ga_tracking_id: "UA-8599886-1"
 
 # Google Recaptcha for contact form
 # recaptcha_site_key: 6Ld_UCsUAAAAAOff_4JE6Uq5ZfKicBMZefuoaQsD

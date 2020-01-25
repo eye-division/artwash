@@ -1,8 +1,11 @@
-- title: "Posts"
-  href: "/posts/"
-  
-- title: "Projects"
-  href: "/projects/"
-  
+- title: "News"
+  href: "/news/"
+  icon: "/assets/images/news.gif"
+
 - title: "About"
   href: "/about/"
+  icon: "/assets/images/links.gif"
+
+- title: "Contact"
+  href: "/contact/"
+  icon: "/assets/images/contact.gif"
