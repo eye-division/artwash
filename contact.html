@@ -4,7 +4,7 @@ title: Contact
 permalink: /contact/
 main_image_path: "/assets/images/contact_image.jpg"
 main_image_caption:
-
+show_form: true
 _options:
   layout:
     hidden: true
@@ -31,18 +31,82 @@ _comments:
   <div class="editable">
   </div>
   <div>
-    <p>If you wish to send in images please contact us by
-    <script language=Javascript type=text/javascript>
-    <!--
-    document.write('<a href="mai');
-    document.write('lto');
-    document.write(':&#107;&#115;&#101;&#110;&#116;&#97;&#110;&#99;&#101;');
-    document.write('@');
-    document.write('&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">');
-    document.write('email<\/a>.');
-    // -->
-    </script><noscript>&#107;&#115;&#101;&#110;&#116;&#97;&#110;&#99;&#101; at
-    &#103;&#109;&#97;&#105;&#108; dot &#99;&#111;&#109;</noscript>
-  </p>
+    <p>If you wish to send in images please contact us by email below.</p>
+    {% if page.show_form %}
+      <h4>Send an email</h4>
+      <form action="/thanks/" method="post">
+
+      <fieldset>
+        <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="_to" value="{{ site.email }}">
+        <input type="hidden" name="_subject" value="Web form">
+        <p>
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+        </p>
+        <p>
+        <label for="_replyto">Email:</label>
+        <input type="email" name="_replyto">
+        </p>
+        <p>
+        <label>Message</label>
+        <textarea name="message"></textarea>
+        </p>
+        {% if site.recaptcha_site_key and jekyll.environment == 'production' %}
+          <div class="g-recaptcha" data-sitekey="{{ site.recaptcha_site_key }}"></div>
+        {% endif %}
+
+        <p>
+          <input type="submit" value="Send message">
+        </p>
+
+      </fieldset>
+
+    </form>
+  {% else %}
+
+
+  {% endif %}
+
 </div>
+
+<script src="https://www.google.com/recaptcha/api.js?render=SITE_ID"></script>
+<script>
+    var submitted = false;
+    var tokenCreated = false;
+    var formEl = document.getElementById('my-form');
+
+    formEl.addEventListener("submit", function (event) {
+
+        // Check if the recaptcha exists
+        if (!tokenCreated) {
+
+            // Prevent submission
+            event.preventDefault();
+
+            // Prevent more than one submission
+            if (!submitted) {
+                submitted = true;
+                // needs for recaptacha ready
+                grecaptcha.ready(function() {
+                    // do request for recaptcha token
+                    // response is promise with passed token
+                    grecaptcha.execute('SITE_ID', {action: 'create_comment'}).then(function (token) {
+                        // add token to form
+                        var input = document.createElement("input");
+                        input.type = "hidden";
+                        input.name = "g-recaptcha-response";
+                        input.value = token;
+                        formEl.appendChild(input);
+
+                        // resubmit the form
+                        tokenCreated = true;
+                        formEl.submit();
+                    });;
+                });
+            }
+        }
+  });
+</script>
+
 
