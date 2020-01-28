@@ -35,7 +35,6 @@
 
 <!-- Scripts -->
 {% if site.recaptcha_site_key and jekyll.environment == 'production' and page.url == '/contact/' %}
-<script src="//www.google.com/recaptcha/api.js" async defer></script>
 <script src="https://www.google.com/recaptcha/api.js?render={{ site.recaptcha_site_key }}"></script>
 <script>
     var submitted = false;
