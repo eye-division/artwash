@@ -5,9 +5,9 @@ plugins:
 
 # Site settings
 title: ArtWash
-subtitle: ArtWash built on Bourbon and Neat
+subtitle: Artist led organisation based in Oxfordshire
 name: ArtWash
-description: A base theme built on Bourbon and Neat
+description: ArtWash is an artist led organisation based in Oxfordshire
 # Base URL of site (i.e. /blog). It should always start with a slash,
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
@@ -16,7 +16,7 @@ baseurl: ""
 url: "https://www.artwash.co.uk"
 logo: "/assets/images/artwash_logo.gif"
 show_logo: true
-email: ksentance@gmail.com
+email: artwash@gmail.com
 
 # Build settings
 markdown: kramdown
@@ -51,7 +51,7 @@ defaults:
 ga_tracking_id: "UA-8599886-1"
 
 # Google Recaptcha for contact form
-# recaptcha_site_key: 6Ld_UCsUAAAAAOff_4JE6Uq5ZfKicBMZefuoaQsD
+recaptcha_site_key: 6LdmddMUAAAAAGQEAFlZgBq3N0UeYkYv4_npKpnQ
 
 # Social icons and sharing options
 #
