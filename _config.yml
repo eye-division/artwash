@@ -51,7 +51,7 @@ defaults:
 ga_tracking_id: "UA-8599886-1"
 
 # Google Recaptcha for contact form
-recaptcha_site_key: 6LdmddMUAAAAAGQEAFlZgBq3N0UeYkYv4_npKpnQ
+recaptcha_site_key: "6Lc1nNMUAAAAAIcnoRTclTVNSmxBBLSPwW-rQT37"
 
 # Social icons and sharing options
 #
