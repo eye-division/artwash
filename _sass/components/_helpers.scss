@@ -5,3 +5,14 @@
 .mb0 {
   margin-bottom: 0px;
 }
+
+/* Fontawesome icon test */
+
+.instagram {
+  @extend %fa-icon;
+  @extend .fab;
+
+  &:before {
+    content: fa-content($fa-var-twitter);
+  }
+}
